@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 
 import PostsIndex from './components/posts-index';
+import PostsNew from './components/posts-new';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Switch>
+				<Route path="/posts" component={PostsNew}/>
 				<Route path="/" component={PostsIndex}/>
 			</Switch>
 		</div>
