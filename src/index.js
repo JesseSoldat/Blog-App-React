@@ -6,7 +6,7 @@ import promise from 'redux-promise';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import reducers from './reducers';
 
-import App from './App';
+import PostsIndex from './components/posts-index';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -14,7 +14,13 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
 <Provider store={createStoreWithMiddleware(reducers)}>
-	<App />
+	<BrowserRouter>
+		<div>
+			<Switch>
+				<Route path="/" component={PostsIndex}/>
+			</Switch>
+		</div>
+	</BrowserRouter>
 </Provider>
 , document.getElementById('root'));
 registerServiceWorker();
