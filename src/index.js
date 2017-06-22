@@ -8,6 +8,8 @@ import reducers from './reducers';
 
 import PostsIndex from './components/posts-index';
 import PostsNew from './components/posts-new';
+import PostsShow from "./components/posts-show";
+
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -18,8 +20,9 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Switch>
-				<Route path="/posts" component={PostsNew}/>
-				<Route path="/" component={PostsIndex}/>
+				<Route path="/posts/new" component={PostsNew}/>
+				<Route path="/posts/:id" component={PostsShow}/>
+				<Route exact path="/" component={PostsIndex}/>
 			</Switch>
 		</div>
 	</BrowserRouter>
